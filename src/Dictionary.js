@@ -4,7 +4,7 @@ import "./Dictionary.css";
 import Result from "./Result";
 
 export default function Dictionary(props) {
-  const [keyword, setKeyword] = useState(props.defaultWord);
+  const [keyword, setKeyword] = useState(props.defaultKeyword);
   const[definition, setDefinition]= useState("");
 
   function handleResponse(response){
