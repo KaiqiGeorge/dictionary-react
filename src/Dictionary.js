@@ -43,6 +43,7 @@ function handleImages(response){
   function update(event) {
     setKeyword(event.target.value);
   }
+  if(loaded){
   return (
     <div className="dictionary">
       <section className="search">
@@ -64,5 +65,8 @@ function handleImages(response){
       <Images images={images} />
 
     </div>
-  );
+  );} else{
+    load();
+    return "Loading";
+  }
 }
