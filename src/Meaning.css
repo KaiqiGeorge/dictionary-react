@@ -27,3 +27,10 @@ h3 {
   margin-left: 11px;
   font-weight: 550;
 }
+
+@media(max-width: 1000px){
+    .synonym {
+        margin: 0 -3px;
+        margin-left: 10px;
+      }
+}
