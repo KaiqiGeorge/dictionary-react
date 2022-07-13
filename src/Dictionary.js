@@ -7,10 +7,27 @@ import Images from "./Images"
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
   const[definition, setDefinition]= useState("");
+  const[images,setImages] = useState([]);
+  const[loaded, setLoaded]= useState(false);
+
+ 
+
+function handleImages(response){
+  setImages(response.data.photos);
+}
+
+ function load(){
+  setLoaded(true);
+  search();
+ }
 
   function handleResponse(response){
-    console.log(response.data);
     setDefinition(response.data[0]);
+    let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
+    let apiKey="563492ad6f917000010000011af6a812338a420cb7866dd633263b9e";
+    axios
+      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
+      .then(handleImages);
   }
 
   function search() {
@@ -44,7 +61,7 @@ export default function Dictionary(props) {
     <span className="hint">i.e. wine, sunrise, flower, yoga, food...</span>
       </section>
       <Result definition={definition}/>
-      <Images />
+      <Images images={images} />
 
     </div>
   );

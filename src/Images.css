@@ -5,6 +5,9 @@
     padding: 25px;
     max-width: 900px;
     text-align: left;
-    margin-top: 10px;
-
 }
+
+.images img{
+    margin: 5px;
+}
+ 
