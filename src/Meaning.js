@@ -17,10 +17,11 @@ export default function Meaning(props) {
             );
           })}
         </ol>
-        <span className="Similar">Similar: </span>
-       
+        {props.meaning.synonyms.length !== 0 && (
+          <span className="Similar">Similar: </span>
+        )}
+
         {props.meaning.synonyms.map(function (synonym, index) {
-          
           if (index < 6) {
             return (
               <span>
