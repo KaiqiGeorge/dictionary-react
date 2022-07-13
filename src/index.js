@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Dictionary from "./Dictionary";
+import "./index.css"
 
 
 function App() {
   return (
     <div className="dictionary-app">
-      <Dictionary />
+      <Dictionary defaultWord="sunset"/>
     </div>
   );
 }

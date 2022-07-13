@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
+import Result from "./Result";
 
-export default function Dictionary() {
-  const [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  const [keyword, setKeyword] = useState(props.defaultWord);
   const [dictionary, setDictionary] = useState("");
+  const[definition, setDefinition]= useState("");
 
   function handleResponse(response){
     console.log(response.data);
+    setDefinition(response.data[0]);
   }
 
   function search() {
@@ -15,29 +18,33 @@ export default function Dictionary() {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function updateKeyword(event) {
-    setKeyword(event.target.value);
+  function handleUpdate(event) {
+    event.preventDefault();
     search();
   }
 
-  function handleKeyword(event) {
-    event.preventDefault();
+  function update(event) {
+    setKeyword(event.target.value);
   }
   return (
     <div className="dictionary">
-      <h1>Dictionary</h1>
-      <form className="row" onSubmit={handleKeyword}>
-        <div className="col-8">
+      <section className="search">
+        <label>What word do you want to look up? </label>
+      <form className="row" onSubmit={handleUpdate}>
           <input
             type="search"
             className="form-control"
-            onChange={updateKeyword}
+            defaultValue={props.defaultWord}
+            placeholder="Search for a word..."
+            onChange={update}
           />
-        </div>
-        <div className="col-4">
-          <input type="submit" value="search" className="btn btn-primary" />
-        </div>
+       
+       
       </form>
+    <span className="hint">i.e. wine, sunrise, flower, yoga, food...</span>
+      </section>
+      <Result definition={definition}/>
+
     </div>
   );
 }

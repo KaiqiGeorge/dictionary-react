@@ -1,0 +1,9 @@
+.dictionary-app {
+  text-align: left;
+  max-width: 100%;
+  background-color: #f9f7fe;
+  display: block;
+  margin: 0 auto;
+  padding: 200px;
+  font-family: "Cerebri-Sans", Helvetica, Arial, sans-serif;
+}

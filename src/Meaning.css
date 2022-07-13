@@ -1,0 +1,29 @@
+.meaning {
+  border: 1px solid whitesmoke;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  max-width: 900px;
+  text-align: left;
+  margin-top: 10px;
+}
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 29px;
+  margin-left: -15px;
+}
+
+.example {
+  opacity: 0.7;
+}
+.synonym {
+  list-style: none;
+  display: inline-block;
+  margin: 0 8px;
+}
+.Similar {
+  margin-left: 10px;
+  font-weight: 550;
+}
