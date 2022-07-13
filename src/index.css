@@ -5,6 +5,7 @@
   display: block;
   margin: 0 auto;
   padding: 200px;
+  padding-top: 150px;
   font-family: "Cerebri-Sans", Helvetica, Arial, sans-serif;
 }
 footer{
@@ -14,4 +15,15 @@ footer{
 }
 footer a{
   text-decoration: none;
+}
+@media(max-width: 1000px){
+  .dictionary-app{
+    max-width: 900px;
+    padding: 20px;
+    padding-top: 80px;
+
+}
+footer{
+  font-size: 10px;
+}
 }

@@ -26,3 +26,8 @@ label {
 .hint {
   font-size: 15px;
 }
+@media (max-width: 1000px) {
+  .search {
+    padding: 28px;
+  }
+}
