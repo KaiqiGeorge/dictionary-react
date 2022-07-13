@@ -1,0 +1,10 @@
+.images{
+    border: 1px solid whitesmoke;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 900px;
+    text-align: left;
+    margin-top: 10px;
+
+}

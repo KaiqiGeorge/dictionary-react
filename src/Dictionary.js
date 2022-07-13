@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
 import Result from "./Result";
+import Images from "./Images"
 
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
@@ -43,6 +44,7 @@ export default function Dictionary(props) {
     <span className="hint">i.e. wine, sunrise, flower, yoga, food...</span>
       </section>
       <Result definition={definition}/>
+      <Images />
 
     </div>
   );
