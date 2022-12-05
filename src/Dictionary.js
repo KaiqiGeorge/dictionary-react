@@ -10,12 +10,9 @@ export default function Dictionary(props) {
   const[images,setImages] = useState([]);
   const[loaded, setLoaded]= useState(false);
 
- 
-
 function handleImages(response){
   setImages(response.data.photos);
 }
-
  function load(){
   setLoaded(true);
   search();
@@ -56,8 +53,6 @@ function handleImages(response){
             placeholder="Search for a word..."
             onChange={update}
           />
-       
-       
       </form>
     <span className="hint">i.e. wine, sunrise, flower, yoga, food...</span>
       </section>
