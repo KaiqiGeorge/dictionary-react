@@ -21,7 +21,8 @@ function handleImages(response){
   function handleResponse(response){
     setDefinition(response.data[0]);
     let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
-    let apiKey="563492ad6f917000010000011af6a812338a420cb7866dd633263b9e";
+    // let apiKey="563492ad6f917000010000011af6a812338a420cb7866dd633263b9e";
+    let apiKey = "HHEosH7tQHbaLWD9ET7EnSzSQmq9mT5Td3q7eEcKxpaUDeSQenBhj5Lr";
     axios
       .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
       .then(handleImages);
